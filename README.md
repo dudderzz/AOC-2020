@@ -1,2 +1,2 @@
-# AOC-2020
+# AOC2020
 Advent Of Code 2020 - JS
