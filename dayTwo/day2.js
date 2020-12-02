@@ -25,3 +25,14 @@ lines.forEach(line => {
 }
 )
 console.log("List of Valid Passwords = " +  validPasswords)
+
+validPasswords = 0;
+lines.forEach(line => {
+    const {groups} = /^(?<firstNum>\d+)-(?<secondNum>\d+) (?<char>.): (?<password>.*)$/.exec(line);
+
+    if(groups.password[groups.firstNum-1] == groups.char ^ groups.password[groups.secondNum-1] == groups.char) {
+        validPasswords++;
+    }
+})
+
+console.log("List of valid Second Passwords = " + validPasswords);
